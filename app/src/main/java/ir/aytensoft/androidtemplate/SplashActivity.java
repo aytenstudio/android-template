@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import ir.yooneskh.yutil.YActivity;
 import ir.yooneskh.yutil.YAnalytics;
 import ir.yooneskh.yutil.YGlide;
+import ir.yooneskh.yutil.YNavigation;
 import ir.yooneskh.yutil.YToaster;
 import ir.yooneskh.yutil.appstore.YAppStore;
 import ir.yooneskh.yutil.appstore.YBazaarStore;
@@ -47,6 +48,7 @@ public class SplashActivity extends YActivity implements YUpdateable {
     }
 
     private void goToNext() {
+//        YNavigation.launchActivityFinishing(self, MainActivity.class);
         YToaster.shortToast(self, "To heavens and beyond ... ^_^");
     }
 
