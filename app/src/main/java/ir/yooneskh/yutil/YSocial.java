@@ -24,21 +24,6 @@ public class YSocial {
         context.startActivity(Intent.createChooser(sharingIntent, chooserTitle));
     }
 
-    public static void shareAppLink(Context context) {
-
-        StringBuilder text = new StringBuilder();
-
-        text.append("انواع برنامه های بدنسازی برای طول هفته شما");
-        text.append("\n\n");
-        text.append("دانلود کاملا رایگان در");
-        text.append("\n");
-        text.append(shareLink);
-        text.append("http://link9.ir/bodyfit");
-
-        shareSimpleTextGeneral(context, "فرستادن لینک", text.toString(), "انتخاب برنامه فرستادن");
-
-    }
-
     public static void shareAppAPK(Activity activity) {
 
         PackageManager pm = activity.getPackageManager();

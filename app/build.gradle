@@ -28,4 +28,5 @@ dependencies {
     compile 'com.github.orhanobut:hawk:1.23'
     compile 'com.amplitude:android-sdk:2.9.2'
     compile 'com.afollestad.material-dialogs:core:0.9.0.2'
+    compile files('libs/glide-3.7.0.jar')
 }

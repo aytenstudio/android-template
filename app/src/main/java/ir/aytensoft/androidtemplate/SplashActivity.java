@@ -1,17 +1,7 @@
 package ir.aytensoft.androidtemplate;
 
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-
-import com.google.gson.JsonArray;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.Objects;
 
 import ir.yooneskh.yutil.YActivity;
 import ir.yooneskh.yutil.YAnalytics;
@@ -20,8 +10,6 @@ import ir.yooneskh.yutil.appstore.YAppStore;
 import ir.yooneskh.yutil.appstore.YBazaarStore;
 import ir.yooneskh.yutil.database.YDatabase;
 import ir.yooneskh.yutil.dialog.YDialoger;
-import ir.yooneskh.yutil.network.YNetwork;
-import ir.yooneskh.yutil.network.YNetworkResultProcessor;
 import ir.yooneskh.yutil.versioning.YUpdateable;
 import ir.yooneskh.yutil.versioning.YUpdater;
 
@@ -31,7 +19,7 @@ public class SplashActivity extends YActivity implements YUpdateable {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        ySetup();
+        ySetupToolbar();
         yCreate();
     }
 

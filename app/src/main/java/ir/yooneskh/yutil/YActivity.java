@@ -17,7 +17,7 @@ public abstract class YActivity extends AppCompatActivity {
     public final YActivity self = this;
     public Toolbar toolbar;
 
-    public void ySetup() {
+    public void ySetupToolbar() {
         toolbar = (Toolbar)findViewById(R.id._toolbar);
         setSupportActionBar(toolbar);
     }

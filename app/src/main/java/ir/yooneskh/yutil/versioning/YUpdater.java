@@ -42,7 +42,7 @@ public class YUpdater {
                 new YNetworkResultProcessor<Double>() {
                     @Override
                     public void process(int httpCode, Double result) {
-                        if (Math.round(result) > getVersionCode(activity)) {
+                        if (httpCode == 200 && Math.round(result) > getVersionCode(activity)) {
                             updateable.hasUpdate();
                         }
                     }

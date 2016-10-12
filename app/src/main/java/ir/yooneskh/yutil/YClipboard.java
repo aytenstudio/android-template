@@ -2,9 +2,12 @@ package ir.yooneskh.yutil;
 
 import android.content.Context;
 
+import ir.aytensoft.androidtemplate.R;
+
 /**
  * Created by Yoones on 11/22/2015.
  */
+
 public class YClipboard {
 
     public static void put(Context context, String body) {
@@ -13,7 +16,7 @@ public class YClipboard {
             clipboard.setText(body);
         } else {
             android.content.ClipboardManager clipboard = (android.content.ClipboardManager) context.getSystemService(context.CLIPBOARD_SERVICE);
-            android.content.ClipData clip = android.content.ClipData.newPlainText("فال روز", body);
+            android.content.ClipData clip = android.content.ClipData.newPlainText(context.getString(R.string.app_name), body);
             clipboard.setPrimaryClip(clip);
         }
     }

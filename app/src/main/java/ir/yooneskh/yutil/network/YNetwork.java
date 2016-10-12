@@ -27,12 +27,19 @@ public class YNetwork {
                     public void onCompleted(Exception e, Response<T> result) {
 
                         if (e != null) {
+
                             Log.e("313 ynetwork error", e.getMessage());
                             e.printStackTrace();
+
+
+                            Log.i("313 ynetwork result", "null");
+                            processor.process(-1, null);
+
+                            return;
+
                         }
 
                         Log.i("313 ynetwork result", String.valueOf(result.getResult()));
-
                         processor.process(result.getHeaders().code(), result.getResult());
 
                     }
@@ -54,8 +61,15 @@ public class YNetwork {
                     public void onCompleted(Exception e, Response<T> result) {
 
                         if (e != null) {
+
                             Log.e("313 ynetwork error", e.getMessage());
                             e.printStackTrace();
+
+                            Log.i("313 ynetwork result", "null");
+                            processor.process(-1, null);
+
+                            return;
+
                         }
 
                         Log.i("313 ynetwork result", String.valueOf(result.getResult()));
@@ -81,8 +95,15 @@ public class YNetwork {
                     public void onCompleted(Exception e, Response<T> result) {
 
                         if (e != null) {
+
                             Log.e("313 ynetwork error", e.getMessage());
                             e.printStackTrace();
+
+                            Log.i("313 ynetwork result", "null");
+                            processor.process(-1, null);
+
+                            return;
+
                         }
 
                         Log.i("313 ynetwork result", String.valueOf(result.getResult()));
