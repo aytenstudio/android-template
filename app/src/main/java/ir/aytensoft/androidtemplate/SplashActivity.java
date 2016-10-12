@@ -40,10 +40,10 @@ public class SplashActivity extends YActivity implements YUpdateable {
         YDatabase.init(self);
         YAnalytics.init(self, "4d21e1acd5474eb7dd83f25c59fc0105");
 
+        YAppStore.appStore = new YBazaarStore();
+
         YUpdater.check(self, this);
         YUpdater.checkRemote(self, this);
-
-        YAppStore.appStore = new YBazaarStore();
 
     }
 
