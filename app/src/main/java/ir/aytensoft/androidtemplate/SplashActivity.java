@@ -2,9 +2,11 @@ package ir.aytensoft.androidtemplate;
 
 import android.os.Handler;
 import android.os.Bundle;
+import android.widget.ImageView;
 
 import ir.yooneskh.yutil.YActivity;
 import ir.yooneskh.yutil.YAnalytics;
+import ir.yooneskh.yutil.YGlide;
 import ir.yooneskh.yutil.YToaster;
 import ir.yooneskh.yutil.appstore.YAppStore;
 import ir.yooneskh.yutil.appstore.YBazaarStore;
