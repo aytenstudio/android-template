@@ -35,14 +35,13 @@ public class YUpdater {
     }
 
     public static void checkRemote(final Activity activity, final YUpdateable updateable) {
-
         YNetwork.get(
                 activity,
                 "http://yooneskh.ir/Versioneer/getversion.php?package_name=" + activity.getPackageName(),
-                new YNetworkResultProcessor<Double>() {
+                new YNetworkResultProcessor<String>() {
                     @Override
-                    public void process(int httpCode, Double result) {
-                        if (httpCode == 200 && Math.round(result) > getVersionCode(activity)) {
+                    public void process(int httpCode, String result) {
+                        if (httpCode == 200 && result != null && Integer.parseInt(result) > getVersionCode(activity)) {
                             updateable.hasUpdate();
                         }
                     }
