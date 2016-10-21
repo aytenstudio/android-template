@@ -13,7 +13,21 @@ import android.content.Intent;
  
 public class YNotification {
 
-    public static void simple(Activity activity, String title, String body, Class targetActivity) {
+    public static void simple(Activity activity, String title, String body) {
+
+        Notification notification = new Notification.Builder(activity)
+                .setContentTitle(title)
+                .setContentText(body)
+                .setAutoCancel(true)
+                .build();
+
+        NotificationManager notificationManager = (NotificationManager)activity.getSystemService(Context.NOTIFICATION_SERVICE);
+
+        notificationManager.notify(0, notification);
+
+    }
+
+    public static void loadActivity(Activity activity, String title, String body, Class targetActivity) {
 
         Intent intent = new Intent(activity, targetActivity);
         PendingIntent pendingIntent = PendingIntent.getActivity(activity, (int)System.currentTimeMillis(), intent, 0);
