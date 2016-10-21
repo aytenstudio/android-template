@@ -38,10 +38,10 @@ public class YUpdater {
         YNetwork.get(
                 activity,
                 "http://yooneskh.ir/Versioneer/getversion.php?package_name=" + activity.getPackageName(),
-                new YNetworkResultProcessor<String>() {
+                new YNetworkResultProcessor<Double>() {
                     @Override
-                    public void process(int httpCode, String result) {
-                        if (httpCode == 200 && result != null && Integer.parseInt(result) > getVersionCode(activity)) {
+                    public void process(int httpCode, Double result) {
+                        if (httpCode == 200 && result != null && result > getVersionCode(activity) * 1.0) {
                             updateable.hasUpdate();
                         }
                     }

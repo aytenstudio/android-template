@@ -24,13 +24,6 @@
         android:layout_marginLeft="@dimen/splash_logo_horizontal_offset"
         android:layout_marginRight="@dimen/splash_logo_horizontal_offset" />
 
-    <ProgressBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/splash_logo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/splash_progress_top_offset"/>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -8,5 +8,5 @@
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
     android:background="?attr/colorPrimary"
-    android:elevation="6.9dp"
+    app:elevation="7dp"
     android:layoutDirection="rtl" />
