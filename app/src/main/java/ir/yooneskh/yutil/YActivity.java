@@ -4,6 +4,8 @@ import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
+import com.afollestad.materialdialogs.MaterialDialog;
+
 import ir.aytensoft.androidtemplate.R;
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
@@ -16,6 +18,28 @@ public abstract class YActivity extends AppCompatActivity {
 
     public final YActivity self = this;
     public Toolbar toolbar;
+
+    MaterialDialog progressDialog = null;
+
+    public void yShowLoading(String title) {
+        progressDialog = new MaterialDialog.Builder(this)
+                .title(title)
+                .progress(true, 0)
+                .show();
+    }
+
+    public void yShowLoading(String title, String description) {
+        progressDialog = new MaterialDialog.Builder(this)
+                .title(title)
+                .content(description)
+                .progress(true, 0)
+                .show();
+    }
+
+    public void yHideLoading() {
+        progressDialog.hide();
+        progressDialog = null;
+    }
 
     public void ySetupToolbar() {
         toolbar = (Toolbar)findViewById(R.id._toolbar);
