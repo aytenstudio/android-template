@@ -1,28 +1,34 @@
-package ir.yooneskh.yutil;
+package ir.yooneskh.yutil.analytic;
 
 import android.app.Activity;
+import android.content.Context;
 import android.util.Log;
 
 import com.amplitude.api.Amplitude;
 
 import org.json.JSONObject;
 
+import ir.yooneskh.yutil.YJsonBuilder;
+
 /**
- * Created by YoonesKh on 2016/10/11.
+ * Created by YoonesKh on 2016/11/05.
  */
+public class AmplitudeAnalytics implements IYAnalytic {
 
-public class YAnalytics {
-
-    public static void init(Activity activity, String key) {
+    @Override
+    public void init(Activity activity, String key) {
+        Log.i("313 analytics", "amplitude init");
         Amplitude.getInstance().initialize(activity, key).enableForegroundTracking(activity.getApplication());
     }
 
-    public static void log(String title) {
+    @Override
+    public void log(String title) {
         Log.i("313 yanalytics event", "title: " + title);
         Amplitude.getInstance().logEvent(title);
     }
 
-    public static void log(String title, Object... args) {
+    @Override
+    public void log(String title, Object... args) {
 
         JSONObject data = YJsonBuilder.instantJSONObject(args);
 

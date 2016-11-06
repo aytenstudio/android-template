@@ -4,11 +4,13 @@ import android.os.Handler;
 import android.os.Bundle;
 
 import ir.yooneskh.yutil.YActivity;
-import ir.yooneskh.yutil.YAnalytics;
 import ir.yooneskh.yutil.YToaster;
+import ir.yooneskh.yutil.analytic.FabricCrashlytics;
+import ir.yooneskh.yutil.analytic.YAnalytics;
 import ir.yooneskh.yutil.appstore.YAppStore;
 import ir.yooneskh.yutil.appstore.YBazaarStore;
 import ir.yooneskh.yutil.database.YDatabase;
+import ir.yooneskh.yutil.database.YHawkDatabase;
 import ir.yooneskh.yutil.dialog.YDialoger;
 import ir.yooneskh.yutil.versioning.YUpdateable;
 import ir.yooneskh.yutil.versioning.YUpdater;
@@ -34,10 +36,12 @@ public class SplashActivity extends YActivity implements YUpdateable {
 
         // configurations
 
-        YDatabase.init(self);
-        YAnalytics.init(self, "4d21e1acd5474eb7dd83f25c59fc0105");
-
+        YDatabase.database = new YHawkDatabase();
         YAppStore.appStore = new YBazaarStore();
+        YAnalytics.analytic = new FabricCrashlytics();
+
+        YDatabase.init(self);
+        YAnalytics.init(self, "4d21e1acd5474eb7dd83f25c59fc0105"); // this key is for amplitude, crashlytics key is in manifest
 
         YUpdater.check(self, this);
         YUpdater.checkRemote(self, this);
@@ -61,7 +65,6 @@ public class SplashActivity extends YActivity implements YUpdateable {
 
     @Override
     public void hasUpdate() {
-
         YDialoger.yesNo(
                 self,
                 "نسخه جدید",
@@ -74,7 +77,6 @@ public class SplashActivity extends YActivity implements YUpdateable {
                 },
                 null
         );
-
     }
 
 }

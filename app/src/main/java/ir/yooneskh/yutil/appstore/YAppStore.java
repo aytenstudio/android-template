@@ -7,7 +7,7 @@ import android.content.Context;
  */
 public class YAppStore {
 
-    public static IYAppStore appStore = new YBazaarStore();
+    public static IYAppStore appStore;
 
     public static boolean hasApplication(Context context) {
         return appStore.hasApplication(context);

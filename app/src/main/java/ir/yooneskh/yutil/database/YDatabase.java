@@ -7,22 +7,22 @@ import android.content.Context;
  */
 public class YDatabase {
 
-    static YIDatabase d = new YHawkDatabase();
+    public static YIDatabase database;
 
     public static void init(Context context) {
-        d.init(context);
+        database.init(context);
     }
 
     public static boolean contains(String key) {
-        return d.contains(key);
+        return database.contains(key);
     }
 
     public static boolean put(String key, Object value) {
-        return d.put(key, value);
+        return database.put(key, value);
     }
 
     public static <T> T get(String key, T defaultValue) {
-        return d.get(key, defaultValue);
+        return database.get(key, defaultValue);
     }
 
 }
