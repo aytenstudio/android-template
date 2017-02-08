@@ -1,35 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="ir.aytensoft.androidtemplate.SplashActivity">
+<layout>
+    <data>
 
-    <include
-        layout="@layout/toolbar" />
-
-    <ImageView
-        android:id="@+id/splash_background"
+    </data>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:adjustViewBounds="true"
-        android:scaleType="centerCrop" />
+        tools:context="ir.aytensoft.androidtemplate.activity.SplashActivity">
 
-    <ImageView
-        android:id="@+id/splash_logo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:adjustViewBounds="true"
-        android:layout_marginLeft="@dimen/splash_logo_horizontal_offset"
-        android:layout_marginRight="@dimen/splash_logo_horizontal_offset" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:src="@drawable/splash" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="کاری از تیم نرم افزاری آیتن سافت"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="@dimen/splash_trademark_bottom_offset" />
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="85dip"
+            android:layout_centerHorizontal="true" />
 
-</RelativeLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:background="#44fafafa"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingTop="13dip"
+            android:paddingBottom="13dip"
+            android:paddingLeft="23dip"
+            android:paddingRight="23dip">
+
+            <ImageView
+                android:layout_width="85dip"
+                android:layout_height="85dip"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_launcher"/>
+
+            <TextView
+                fontPath="fonts/irs-medium.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="نــام بـرنـامـه"
+                android:textSize="16.9sp"
+                android:textColor="@color/textLight"
+                android:layout_marginTop="5dip"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/splash_trademark_bottom_offset"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical" >
+
+            <TextView
+                fontPath="fonts/irs-light.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ساخته شده با"
+                android:textColor="@color/textLight" />
+
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/splash_heart_beat"
+                android:layout_width="18dip"
+                android:layout_height="18dip"
+                android:adjustViewBounds="true"
+                android:src="@drawable/common_heart_beat"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"/>
+
+            <TextView
+                fontPath="fonts/irs-light.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="توسط آیتن سافت"
+                android:textColor="@color/textLight" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</layout>

@@ -8,7 +8,7 @@ import com.crashlytics.android.answers.Answers;
 import com.crashlytics.android.answers.CustomEvent;
 
 import io.fabric.sdk.android.Fabric;
-import ir.yooneskh.yutil.YJsonBuilder;
+import ir.yooneskh.yutil.json.YJsonBuilder;
 
 /**
  * Created by YoonesKh on 2016/11/05.

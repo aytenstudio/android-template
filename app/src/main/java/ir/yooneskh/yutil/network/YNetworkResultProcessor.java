@@ -5,6 +5,6 @@ import com.google.gson.JsonObject;
 /**
  * Created by Yoones on 05/08/2016.
  */
-public interface YNetworkResultProcessor<T> {
-    void process(int httpCode, T result);
+public interface YNetworkResultProcessor {
+    void process(int httpCode, String result);
 }

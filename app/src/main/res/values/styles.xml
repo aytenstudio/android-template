@@ -10,4 +10,20 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="AppTheme.ButtonBase" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:paddingTop">12dip</item>
+        <item name="android:paddingBottom">12dip</item>
+        <item name="android:textSize">16.9sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppTheme.ButtonPrimary" parent="AppTheme.ButtonBase">
+        <item name="colorButtonNormal">@color/buttonPrimary</item>
+        <item name="android:textColor">@color/textLight</item>
+    </style>
+
+    <style name="AppTheme.ButtonSecondary" parent="AppTheme.ButtonBase">
+        <item name="android:textColor">@color/textDark</item>
+    </style>
+
 </resources>

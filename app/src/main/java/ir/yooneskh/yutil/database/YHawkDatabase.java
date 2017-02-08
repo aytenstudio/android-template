@@ -35,4 +35,9 @@ public class YHawkDatabase implements YIDatabase {
         return Hawk.get(key, defaultValue);
     }
 
+    @Override
+    public boolean remove(String key) {
+        return Hawk.remove(key);
+    }
+
 }

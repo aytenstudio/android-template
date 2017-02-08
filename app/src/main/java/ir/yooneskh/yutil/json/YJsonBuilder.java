@@ -1,4 +1,4 @@
-package ir.yooneskh.yutil;
+package ir.yooneskh.yutil.json;
 
 
 import com.google.gson.JsonObject;

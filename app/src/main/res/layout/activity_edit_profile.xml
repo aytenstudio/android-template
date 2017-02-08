@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data> </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        xmlns:custom="http://schemas.android.com/apk/res-auto"
+        tools:context="ir.aytensoft.androidtemplate.activity.EditProfileActivity">
+
+        <include
+            android:id="@+id/_toolbar"
+            layout="@layout/toolbar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusableInTouchMode="true"
+                android:padding="25dip">
+
+                <!--fname-->
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="نام"/>
+                    <EditText
+                        android:id="@+id/txt_fname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <!--lname-->
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="نام خانوادگی"/>
+                    <EditText
+                        android:id="@+id/txt_lname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_update_basics"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ثبت اطلاعات پایه" />
+
+                <com.dd.processbutton.iml.ActionProcessButton
+                    fontPath="fonts/irs-medium.ttf"
+                    android:id="@+id/btn_update_profile_pic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18.5dip"
+                    android:text="تغییر تصویر پروفایل"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp"
+                    custom:pb_colorComplete="@color/green_complete"
+                    custom:pb_colorNormal="@color/colorPrimary"
+                    custom:pb_colorPressed="@color/buttonPrimary"
+                    custom:pb_colorProgress="@color/purple_progress"
+                    custom:pb_textComplete="تصویر پروفایل به روز شد"
+                    custom:pb_textProgress="در حال تغییر تصویر ..."
+                    custom:pb_textError="مشکلی رخ داده ..."
+                    android:layout_marginLeft="13dip"
+                    android:layout_marginRight="13dip"
+                    custom:pb_colorError="@color/red_error" />
+
+                <com.dd.processbutton.iml.ActionProcessButton
+                    fontPath="fonts/irs-medium.ttf"
+                    android:id="@+id/btn_update_profile_cover_pic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text="تغییر تصویر پس زمینه پروفایل"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp"
+                    custom:pb_colorComplete="@color/green_complete"
+                    custom:pb_colorNormal="@color/colorPrimary"
+                    custom:pb_colorPressed="@color/buttonPrimary"
+                    custom:pb_colorProgress="@color/purple_progress"
+                    custom:pb_textComplete="تصویر پروفایل به روز شد"
+                    custom:pb_textProgress="در حال تغییر تصویر ..."
+                    custom:pb_textError="مشکلی رخ داده ..."
+                    android:layout_marginLeft="13dip"
+                    android:layout_marginRight="13dip"
+                    custom:pb_colorError="@color/red_error" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</layout>

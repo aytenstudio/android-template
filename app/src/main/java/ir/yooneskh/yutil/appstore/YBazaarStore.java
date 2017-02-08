@@ -1,5 +1,6 @@
 package ir.yooneskh.yutil.appstore;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -54,6 +55,11 @@ public class YBazaarStore implements IYAppStore {
             intent.setPackage("com.farsitel.bazaar");
             context.startActivity(intent);
         }
+    }
+
+    @Override
+    public String getLink(Activity activity) {
+        return "https://cafebazaar.ir/app/" + activity.getPackageName() + "/?l=fa";
     }
 
 }

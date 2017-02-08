@@ -11,4 +11,5 @@ public interface YIDatabase {
     boolean contains(String key);
     boolean put(String key, Object value);
     <T> T get(String key, T defaultValue);
+    boolean remove(String key);
 }

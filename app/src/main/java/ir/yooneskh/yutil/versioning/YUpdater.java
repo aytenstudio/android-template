@@ -2,11 +2,9 @@ package ir.yooneskh.yutil.versioning;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.renderscript.Double2;
+import android.os.Handler;
 
-import ir.yooneskh.yutil.YToaster;
 import ir.yooneskh.yutil.database.YDatabase;
 import ir.yooneskh.yutil.network.YNetwork;
 import ir.yooneskh.yutil.network.YNetworkResultProcessor;
@@ -38,11 +36,21 @@ public class YUpdater {
         YNetwork.get(
                 activity,
                 "http://yooneskh.ir/Versioneer/getversion.php?package_name=" + activity.getPackageName(),
-                new YNetworkResultProcessor<Double>() {
+                new YNetworkResultProcessor() {
                     @Override
-                    public void process(int httpCode, Double result) {
-                        if (httpCode == 200 && result != null && result > getVersionCode(activity) * 1.0) {
-                            updateable.hasUpdate();
+                    public void process(int httpCode, String result) {
+                        try {
+                            if (httpCode == 200 && result != null && !result.equals("") && Integer.parseInt(result) > getVersionCode(activity)) {
+                                updateable.hasUpdate();
+                            }
+                        }
+                        catch (Exception e) {
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    checkRemote(activity, updateable);
+                                }
+                            }, 500);
                         }
                     }
                 }

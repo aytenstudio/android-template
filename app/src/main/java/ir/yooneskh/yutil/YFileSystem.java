@@ -18,4 +18,19 @@ public class YFileSystem {
         return Environment.getExternalStorageDirectory();
     }
 
+    public static File createExternalDirectory(String path) {
+
+        File base = YFileSystem.publicFolder();
+
+        String[] parts = path.split("/");
+
+        for (String part : parts) {
+            base = new File(base, part);
+            if (!base.exists()) if (!base.mkdir()) return null;
+        }
+
+        return base;
+
+    }
+
 }

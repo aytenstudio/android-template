@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme.ButtonPrimary" parent="AppTheme.ButtonBase">
+        <item name="android:colorButtonNormal">@color/buttonPrimary</item>
+        <item name="android:textColor">@color/textLight</item>
+    </style>
+
+    <style name="AppTheme.ButtonSecondary" parent="AppTheme.ButtonBase">
+        <item name="android:textColor">@color/textDark</item>
+    </style>
+
+</resources>

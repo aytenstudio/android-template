@@ -1,9 +1,17 @@
-package ir.aytensoft.androidtemplate;
+package ir.aytensoft.androidtemplate.activity;
 
+import android.databinding.DataBindingUtil;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Bundle;
+import android.view.View;
 
+import ir.aytensoft.androidtemplate.R;
+import ir.aytensoft.androidtemplate.databinding.ActivitySplashBinding;
+import ir.aytensoft.androidtemplate.util.Config;
 import ir.yooneskh.yutil.YActivity;
+import ir.yooneskh.yutil.YNavigation;
 import ir.yooneskh.yutil.YToaster;
 import ir.yooneskh.yutil.analytic.FabricCrashlytics;
 import ir.yooneskh.yutil.analytic.YAnalytics;
@@ -11,17 +19,17 @@ import ir.yooneskh.yutil.appstore.YAppStore;
 import ir.yooneskh.yutil.appstore.YBazaarStore;
 import ir.yooneskh.yutil.database.YDatabase;
 import ir.yooneskh.yutil.database.YHawkDatabase;
-import ir.yooneskh.yutil.dialog.YDialoger;
-import ir.yooneskh.yutil.versioning.YUpdateable;
-import ir.yooneskh.yutil.versioning.YUpdater;
 
-public class SplashActivity extends YActivity implements YUpdateable {
+public class SplashActivity extends YActivity {
+
+    ActivitySplashBinding refs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
-        ySetupToolbar();
+        refs = DataBindingUtil.setContentView(self, R.layout.activity_splash);
+//        ySetupToolbar();
+        ySetup(Config.isRtl);
         yCreate();
     }
 
@@ -32,7 +40,13 @@ public class SplashActivity extends YActivity implements YUpdateable {
             public void run() {
                 goToNext();
             }
-        }, 3085);
+        }, 2085);
+
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setStatusBarColor(Color.TRANSPARENT);
+        }
 
         // configurations
 
@@ -43,40 +57,12 @@ public class SplashActivity extends YActivity implements YUpdateable {
         YDatabase.init(self);
         YAnalytics.init(self, "4d21e1acd5474eb7dd83f25c59fc0105"); // this key is for amplitude, crashlytics key is in manifest
 
-        YUpdater.check(self, this);
-        YUpdater.checkRemote(self, this);
-
     }
 
     private void goToNext() {
 //        YNavigation.launchActivityFinishing(self, MainActivity.class);
-        YToaster.shortToast(self, "To heavens and beyond ... ^_^");
-    }
-
-    @Override
-    public void onFreshInstall() {
-        YAnalytics.log("Install");
-    }
-
-    @Override
-    public void onUpdate() {
-        YAnalytics.log("Update");
-    }
-
-    @Override
-    public void hasUpdate() {
-        YDialoger.yesNo(
-                self,
-                "نسخه جدید",
-                "نسخه جدیدی از برنامه موجود هست. می خواهید به روز رسانی را انجام دهید؟",
-                new Runnable() {
-                    @Override
-                    public void run() {
-                        YAppStore.showSelf(self);
-                    }
-                },
-                null
-        );
+//        YToaster.shortToast(self, "To heavens and beyond ... ^_^");
+        YNavigation.launchActivityClearing(self, EditProfileActivity.class);
     }
 
 }

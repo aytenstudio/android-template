@@ -1,14 +1,14 @@
 package ir.yooneskh.yutil.analytic;
 
 import android.app.Activity;
-import android.content.Context;
 import android.util.Log;
 
 import com.amplitude.api.Amplitude;
 
 import org.json.JSONObject;
 
-import ir.yooneskh.yutil.YJsonBuilder;
+import ir.yooneskh.yutil.json.YJsonBuilder;
+
 
 /**
  * Created by YoonesKh on 2016/11/05.

@@ -1,5 +1,6 @@
 package ir.yooneskh.yutil.appstore;
 
+import android.app.Activity;
 import android.content.Context;
 
 /**
@@ -23,6 +24,10 @@ public class YAppStore {
 
     public static void showSelf(Context context) {
         appStore.showSelf(context);
+    }
+
+    public static String getLink(Activity activity) {
+        return appStore.getLink(activity);
     }
 
 }

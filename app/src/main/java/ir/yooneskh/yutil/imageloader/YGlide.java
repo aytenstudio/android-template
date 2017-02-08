@@ -20,7 +20,7 @@ public class YGlide {
         return Glide.with(context)
                 .load(resource)
                 .placeholder(R.drawable.common_image_placeholder)
-                .error(R.drawable.common_cross_remove_delete)
+                .error(R.drawable.common_image_placeholder_error)
                 .animate(android.R.anim.fade_in)
                 .listener(new RequestListener<V, GlideDrawable>() {
                     @Override

@@ -5,4 +5,6 @@
     <color name="colorAccent">#c62828</color>
     <color name="textDark">#212121</color>
     <color name="textLight">#F5F5F5</color>
+    <color name="buttonPrimary">@color/accent</color>
+    <color name="buttonSecondary">#F5F5F5</color>
 </resources>

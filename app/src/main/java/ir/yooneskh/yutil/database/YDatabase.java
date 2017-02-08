@@ -17,6 +17,10 @@ public class YDatabase {
         return database.contains(key);
     }
 
+    public static boolean remove(String key) {
+        return database.remove(key);
+    }
+
     public static boolean put(String key, Object value) {
         return database.put(key, value);
     }

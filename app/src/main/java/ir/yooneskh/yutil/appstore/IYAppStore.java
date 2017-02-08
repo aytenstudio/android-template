@@ -1,5 +1,6 @@
 package ir.yooneskh.yutil.appstore;
 
+import android.app.Activity;
 import android.content.Context;
 
 /**
@@ -10,4 +11,5 @@ public interface IYAppStore {
     void showCommenting(Context context);
     void showCollection(Context context);
     void showSelf(Context context);
+    String getLink(Activity activity);
 }

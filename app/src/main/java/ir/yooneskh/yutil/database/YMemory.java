@@ -27,4 +27,8 @@ public class YMemory {
         return contains(key) ? (T) mems.get(key) : defaultValue;
     }
 
+    public static boolean remove(String key) {
+        return mems.remove(key) != null;
+    }
+
 }
